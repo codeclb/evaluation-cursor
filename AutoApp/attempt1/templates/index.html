@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyword Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem auto;
+      max-width: 700px;
+      padding: 0 1rem;
+      line-height: 1.4;
+    }
+    form {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #fafafa;
+    }
+    .field {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="file"] {
+      width: 100%;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    .error {
+      margin-top: 1rem;
+      color: #b00020;
+      font-weight: bold;
+    }
+    .result {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #2f6f44;
+      border-radius: 6px;
+      background: #e9f8ee;
+    }
+  </style>
+</head>
+<body>
+  <h1>Text File Keyword Counter</h1>
+  <p>Upload a <code>.txt</code> file, enter a keyword, and count how many times it appears.</p>
+
+  <form method="post" enctype="multipart/form-data">
+    <div class="field">
+      <label for="text_file">Text file</label>
+      <input id="text_file" name="text_file" type="file" accept=".txt" required>
+    </div>
+
+    <div class="field">
+      <label for="keyword">Keyword</label>
+      <input id="keyword" name="keyword" type="text" placeholder="Enter word to search" required>
+    </div>
+
+    <button type="submit">Count</button>
+  </form>
+
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+
+  {% if result %}
+    <div class="result">
+      <p><strong>File:</strong> {{ result.filename }}</p>
+      <p><strong>Keyword:</strong> {{ result.keyword }}</p>
+      <p><strong>Occurrences:</strong> {{ result.count }}</p>
+    </div>
+  {% endif %}
+</body>
+</html>

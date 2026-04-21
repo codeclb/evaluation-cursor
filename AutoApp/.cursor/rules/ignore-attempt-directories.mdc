@@ -1,0 +1,20 @@
+---
+description: Ignore files in attemptX directories
+alwaysApply: true
+---
+
+# Ignore attemptX directories
+
+- Treat any directory named `attempt` followed by one or more digits as excluded from all work.
+- Do not read, search, edit, refactor, or propose changes for files inside these paths.
+- Skip these directories even when they appear nested at any depth.
+
+Examples:
+- `attempt1/`
+- `attempt2/`
+- `attempt10/`
+- `src/attempt3/feature.ts`
+- `foo/bar/attempt99/baz.txt`
+
+Match intent:
+- Directory name pattern: `attempt[0-9]+`

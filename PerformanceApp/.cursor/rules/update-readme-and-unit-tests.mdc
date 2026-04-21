@@ -1,0 +1,7 @@
+---
+alwaysApply: true
+---
+# Update READMEs and Unit Tests when necessary
+- Update README if you make functional or architectural changes to the code base
+- Update unit tests to comply with functional or architectural changes
+- Run updated unit tests after making these changes to verify that they work

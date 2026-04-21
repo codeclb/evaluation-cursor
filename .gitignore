@@ -22,3 +22,41 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Logs and local env
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Node/web
+node_modules/
+dist/
+build/
+coverage/
+
+# Databases/uploads/temp artifacts
+*.db
+uploads/*
+tmp/
+temp/
+
+# Ignore text files by default
+*.txt
+!**/requirements.txt
+
+# Ignore all Cursor metadata except rules
+.cursor/**
+!.cursor/rules/
+!.cursor/rules/**

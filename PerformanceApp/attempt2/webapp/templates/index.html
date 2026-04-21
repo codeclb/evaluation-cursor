@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Frequency Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Word Frequency Analyzer</h1>
+      <p class="subtitle">Upload a text file and count how often a word appears.</p>
+
+      <form id="analyze-form">
+        <label for="text_file">Text File (.txt)</label>
+        <input id="text_file" name="text_file" type="file" accept=".txt" required />
+
+        <label for="target_word">Target Word</label>
+        <input
+          id="target_word"
+          name="target_word"
+          type="text"
+          placeholder="Enter word to count"
+          required
+        />
+
+        <button type="submit">Analyze</button>
+      </form>
+
+      <section class="card">
+        <h2>Result</h2>
+        <pre id="result">No analysis yet.</pre>
+      </section>
+
+      <section class="card">
+        <h2>Recent Analyses</h2>
+        <ul id="history"></ul>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
